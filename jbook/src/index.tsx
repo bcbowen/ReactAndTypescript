@@ -22,9 +22,10 @@ const App = () => {
 
   const onClick = async () => {
     if (!ref.current) {
-      console.log('noref');
       return;
     }
+
+    iframe.current.srcdoc = html;
 
     const result = await ref.current.build({
       entryPoints: ['index.js'],
